@@ -27,7 +27,12 @@ namespace WebApp_Tarde.Controllers
         {
             return View();
         }
+        //Index Usuário e Cadastro
 
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
