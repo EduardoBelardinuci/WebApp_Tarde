@@ -27,7 +27,7 @@ namespace WebApp_Tarde.Controllers
         {
             return View();
         }
-        //Index Usuário e Cadastro
+        //Index Usuário e Cadastro Parte1
 
         public IActionResult Cadastro()
         {
