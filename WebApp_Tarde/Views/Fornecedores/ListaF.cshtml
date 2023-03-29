@@ -1,1 +1,87 @@
-﻿
+﻿<div class="card">
+
+    <div class="card-header">
+        <h2>Lista de Fornecedores</h2>
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-2">
+                <a href="/Fornecedores/ListaF" class="btn btn-success"> Novo Fornecedor </a>
+            </div>
+            <div class="col-3">
+                <select name="filtro" class="form-control">
+                    <option value="0">Todos os campos</option>
+                    <option value="id">Por Id</option>
+                    <option value="nomep">Por Nome</option>
+                    <option value="telefone">Por Telefone</option>
+                </select>
+            </div>
+            <div class="col-5">
+                <input type="text" name="busca" class="form-control" />
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit">
+                    Pesquisar
+                </button>
+            </div>
+        </div>
+
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Pedro</td>
+                    <td>16 997134567</td>
+                    <td>
+                        <a href="/Fornecedores/editar/1" class="btn btn-warning"> Editar </a>
+                        <a href="/Fornecedores/excluir/1" class="btn btn-danger"> Excluir </a>
+                        <a href="/Fornecedores/compras/1" class="btn btn-info"> Lista de Fornecedor </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Maria</td>
+                    <td>16 997134567</td>
+                    <td>
+                        <a href="/Fornecedores/editar/1" class="btn btn-warning"> Editar </a>
+                        <a href="/Fornecedores/excluir/1" class="btn btn-danger"> Excluir </a>
+                        <a href="/Fornecedores/compras/1" class="btn btn-info"> Lista de Fornecedor </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Dudu</td>
+                    <td>16 997134567</td>
+                    <td>
+                        <a href="/Fornecedores/editar/1" class="btn btn-warning"> Editar </a>
+                        <a href="/Fornecedores/excluir/1" class="btn btn-danger"> Excluir </a>
+                        <a href="/Fornecedores/compras/1" class="btn btn-info"> Lista de Fornecedor </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Luisa</td>
+                    <td>16 997134567</td>
+                    <td>
+                        <a href="/Fornecedores/editar/1" class="btn btn-warning"> Editar </a>
+                        <a href="/Fornecedores/excluir/1" class="btn btn-danger"> Excluir </a>
+                        <a href="/Fornecedores/compras/1" class="btn btn-info"> Lista de Fornecedor </a>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
