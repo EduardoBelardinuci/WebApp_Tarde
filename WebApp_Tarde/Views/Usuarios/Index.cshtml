@@ -1,65 +1,86 @@
-﻿<h2>Index do usuário</h2>
+﻿<div class="card">
 
-Criar uma tabela com dados de usuário fictício
+    <div class="card-header">
+        <h2>Lista de Usuários</h2>
+    </div>
+    <div class="card-body">
 
-<table class="table table-striped">
-    <thead>
-        <tr>
+        <div class="row">
+            <div class="col-2">
+                <a href="/Usuarios/Index" class="btn btn-success">
+                    Novo Usuário
+                </a>
+            </div>
+            <div class="col-3">
+                <select name="filtro" class="form-control">
+                    <option value="0">Todos os campos</option>
+                    <option value="id">Por Id</option>
+                    <option value="nome">Por Nome</option>
+                    <option value="telefone">Por Telefone</option>
+                </select>
+            </div>
+            <div class="col-5">
+                <input type="text" name="busca" class="form-control" />
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit">
+                    Pesquisar
+                </button>
+            </div>
+        </div>
 
-            <th>Codigo</th>
-            <th>Nome</th>
-            <th>Telefone</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Eduardo</td>
-            <td>(16) 98102-3552</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Contatinho</td>
-            <td>(16) 98137-9999</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Lucas</td>
-            <td>(16) 98165-9149</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Gabriel</td>
-            <td>(16) 98165-9889</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>Whashinton</td>
-            <td>(16) 98165-9976</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>Ibere</td>
-            <td>(16) 98165-5099</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>Joao</td>
-            <td>(16) 98165-9679</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>Mec</td>
-            <td>(16) 98165-3499</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>Maria</td>
-            <td>(16) 98165-1199</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>Joana</td>
-            <td>(16) 98165-8769</td>
-        </tr>
-</table>
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mariana</td>
+                    <td>(16) 98106-5794</td>
+                    <td>
+                        <a href="/Usuarios/editar/1" class="btn btn-warning"> Editar </a>
+                        <a href="/Usuarios/excluir/1" class="btn btn-danger"> Excluir </a>
+                        <a href="/Usuarios/compras/1" class="btn btn-info"> Lista de Usuarios </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jaime</td>
+                    <td>(16) 98712-4331</td>
+                    <td>
+                        <a href="/Usuarios/editar/2" class="btn btn-warning"> Editar </a>
+                        <a href="/Usuarios/excluir/2" class="btn btn-danger"> Excluir </a>
+                        <a href="/Usuarios/compras/2" class="btn btn-info"> Lista de Usuarios </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Eduardo</td>
+                    <td>(16) 98158-5354</td>
+                    <td>
+                        <a href="/Usuarios/editar/3" class="btn btn-warning"> Editar </a>
+                        <a href="/Usuarios/excluir/3" class="btn btn-danger"> Excluir </a>
+                        <a href="/Usuarios/compras/3" class="btn btn-info"> Lista de Usuarios </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Gabriel</td>
+                    <td>(16) 98106-6712</td>
+                    <td>
+                        <a href="/Usuarios/editar/4" class="btn btn-warning"> Editar </a>
+                        <a href="/Usuarios/excluir/4" class="btn btn-danger"> Excluir </a>
+                        <a href="/Usuarios/compras/4" class="btn btn-info"> Lista de Usuarios </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
