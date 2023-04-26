@@ -1,4 +1,6 @@
-﻿<div class="card">
+﻿@model List<WebApp_Tarde.Models.ClientesViewModel>
+
+<div class="card">
 
     <div class="card-header">
         <h2>Lista de Clientes</h2>
@@ -45,8 +47,7 @@
                     <td>Eduardo</td>
                     <td>16 981023552</td>
                     <td>
-                        <a href="/clientes/editar/1"
-                           class="btn btn-warning">
+                        <a href="/clientes/editar/1" class="btn btn-warning">
                             Editar
                         </a>
                         <a href="/Clientes/excluir/1" class="btn btn-danger">
@@ -91,6 +92,25 @@
                         </a>
                     </td>
                 </tr>
+                @foreach (var cliente in Model)
+                {
+                    <tr>
+                        <td>@cliente.Id</td>
+                        <td>@cliente.Nome</td>
+                        <td>@cliente.Telefone</td>
+                        <td>
+                            <a href="/clientes/editar/@cliente.Id" class="btn btn-warning">
+                                Editar
+                            </a>
+                            <a href="/clientes/excluir/@cliente.Id" class="btn btn-danger">
+                                Excluir
+                            </a>
+                            <a href="/clientes/compras/@cliente.Id" class="btn btn-info">
+                                Lista de compras
+                            </a>
+                        </td>
+                    </tr>
+                }
                 <tr>
                     <td>4</td>
                     <td>José</td>
