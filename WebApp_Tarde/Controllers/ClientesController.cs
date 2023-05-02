@@ -22,25 +22,49 @@ namespace WebApp_Tarde.Controllers
 
                 db.Add(c2);
             }
-            db.Add(c1);
-            db.Add(c2);
+            //db.Add(c1);
+            //db.Add(c2);
             return View(db);
         }
         [HttpPost]
         public IActionResult SalvarDados(ClientesViewModel dados)
-        if(dados.Id == 0)
+        {
+            if (dados.Id == 0)
             {
                 Random rand = new Random();
-        int numeroAleatorio = rand.Next(1, 9999);
-        //gerando Id Aleatório
-        dados.Id = numeroAleatorio;
-        //Adicionando os dados no banco
-         db.Add(dados);
-         }
-         return RedirectToAction("Lista");
-         public IActionResult Cadastro()
+                int numeroAleatorio = rand.Next(1, 9999);
+                //Gerando ID Aleatório
+                dados.Id = numeroAleatorio;
+                //Adicionando os dados no banco
+                db.Add(dados);
+            }
+            else
+            {
+                int indice = db.FindIndex(a => a.Id == dados.Id);
+                db[indice] = dados;
+            }
+            return RedirectToAction("Lista");
+        }
+        public IActionResult Excluir(int id)
         {
-            return View();
+            ClientesViewModel cliente = db.Find(a => a.Id == id);
+            if (cliente != null)
+            {
+                db.Remove(cliente);
+            }
+            return RedirectToAction("Lista");
+        }
+        public IActionResult Editar(int id)
+        {
+            ClientesViewModel cliente = db.Find(a => a.Id == id);
+            if (cliente != null)
+            {
+                return View(cliente);
+            }
+            else
+            {
+                return RedirectToAction("Lista");
+            }
         }
     }
 }
