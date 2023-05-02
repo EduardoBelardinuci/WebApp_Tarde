@@ -30,9 +30,7 @@
                 </button>
             </div>
         </div>
-
         <table class="table table-striped">
-
             <thead>
                 <tr>
                     <th>Código</th>
@@ -42,56 +40,6 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Eduardo</td>
-                    <td>16 981023552</td>
-                    <td>
-                        <a href="/clientes/editar/1" class="btn btn-warning">
-                            Editar
-                        </a>
-                        <a href="/Clientes/excluir/1" class="btn btn-danger">
-                            excluir
-                        </a>
-                        <a href="/Clientes/compras/1" class="btn btn-info">
-                            Lista de compras
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>João</td>
-                    <td>16 984566512</td>
-                    <td>
-                        <a href="/clientes/editar/2"
-                           class="btn btn-warning">
-                            Editar
-                        </a>
-                        <a href="/Clientes/excluir/2" class="btn btn-danger">
-                            excluir
-                        </a>
-                        <a href="/Clientes/compras/2" class="btn btn-info">
-                            Lista de compras
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Maria</td>
-                    <td>16 997135676</td>
-                    <td>
-                        <a href="/clientes/editar/3"
-                           class="btn btn-warning">
-                            Editar
-                        </a>
-                        <a href="/Clientes/excluir/3" class="btn btn-danger">
-                            excluir
-                        </a>
-                        <a href="/Clientes/compras/3" class="btn btn-info">
-                            Lista de compras
-                        </a>
-                    </td>
-                </tr>
                 @foreach (var cliente in Model)
                 {
                     <tr>
@@ -111,27 +59,7 @@
                         </td>
                     </tr>
                 }
-                <tr>
-                    <td>4</td>
-                    <td>José</td>
-                    <td>16 981045673</td>
-                    <td>
-                        <a href="/clientes/editar/4"
-                           class="btn btn-warning">
-                            Editar
-                        </a>
-                        <a href="/Clientes/excluir/4" class="btn btn-danger">
-                            excluir
-                        </a>
-                        <a href="/Clientes/compras/4" class="btn btn-info">
-                            Lista de compras
-                        </a>
-                    </td>
-                </tr>
             </tbody>
-
         </table>
-
     </div>
-
 </div>

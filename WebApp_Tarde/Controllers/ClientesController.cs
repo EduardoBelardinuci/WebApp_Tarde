@@ -8,7 +8,6 @@ namespace WebApp_Tarde.Controllers
         public static List<ClientesViewModel> db = new List<ClientesViewModel>();
         public IActionResult Lista()
         {
-            return View();
             ClientesViewModel c1 = new ClientesViewModel();
             c1.Id = 1;
             c1.Telefone = "991340447";
@@ -38,8 +37,8 @@ namespace WebApp_Tarde.Controllers
         //Adicionando os dados no banco
          db.Add(dados);
          }
-            return RedirectToAction("Lista");
-            public IActionResult Cadastro()
+         return RedirectToAction("Lista");
+         public IActionResult Cadastro()
         {
             return View();
         }
