@@ -26,6 +26,11 @@ namespace WebApp_Tarde.Controllers
             //db.Add(c2);
             return View(db);
         }
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult SalvarDados(ClientesViewModel dados)
         {

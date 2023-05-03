@@ -1,6 +1,62 @@
 ﻿@model List<WebApp_Tarde.Entidades.CategoriaEntidade>
 
-@foreach (var categorias in Model)
-{
-    <p> @categorias.Id - @categorias.Nome - @categorias.Ativo </p>
-}
+<div class="card">
+    <div class="card-header ">
+        <h1>Lista de Categorias</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+            <a href="/Categorias/Lista" class="btn btn-success"> Nova Categoria </a>
+        </div>
+        <div class="col-3">
+            <select name="filtro" class="form-control">
+                <option value="0">Todos os campos</option>
+                <option value="id">Por Id</option>
+                <option value="nomep">Por Nome</option>
+                <option value="ativo">Por Ativo</option>
+            </select>
+        </div>
+        <div class="col-5">
+            <input type="text" name="busca" class="form-control" />
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary" type="submit">
+                Pesquisar
+            </button>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Ativo</th>
+                </tr>
+            </thead>
+            <tbody>
+                    @foreach(var categorias in Model)
+                     {
+                     <tr>
+                        <td>@categorias.Id</td>
+                        <td>@categorias.Nome</td>
+                        <td>
+                            @if (categorias.Ativo)
+                            {
+                                <input type="checkbox" readonly checked />
+                            }else
+                            {
+                                <input type="checkbox" readonly />
+                            }
+                            <td>
+                            <a href="/categorias/editar/@categorias.Id" class="btn btn-warning"> Editar </a>
+                            <a href="/categorias/excluir/@categorias.Id" class="btn btn-danger"> Excluir </a>
+                        </td>
+                    </tr>
+                    }
+            </tbody>
+        </table>
+    </div>
+</div>

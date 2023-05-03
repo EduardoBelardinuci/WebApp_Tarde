@@ -1,6 +1,53 @@
 ﻿@model List<WebApp_Tarde.Entidades.PermissaoEntidade>
 
-    @foreach(var permissao in Model)
-    {
-        <p> @permissao.Id - @permissao.Descricao </p>
-    }
+<div class="card">
+    <div class="card-header ">
+        <h1>Lista de Permissões</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+            <a href="/Permissao/Lista" class="btn btn-success"> Nova Permissão </a>
+        </div>
+        <div class="col-3">
+            <select name="filtro" class="form-control">
+                <option value="0">Todos os campos</option>
+                <option value="id">Por Id</option>
+                <option value="descricao">Por Descricao</option>
+            </select>
+        </div>
+        <div class="col-5">
+            <input type="text" name="busca" class="form-control" />
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary" type="submit">
+                Pesquisar
+            </button>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Descricao</th>
+                </tr>
+            </thead>
+            <tbody>
+                    @foreach(var permissao in Model)
+                     {
+                     <tr>
+                        <td>@permissao.Id</td>
+                        <td>@permissao.Descricao</td>
+                        <td>
+                            <a href="/permissao/editar/@permissao.Id" class="btn btn-warning"> Editar </a>
+                            <a href="/permissao/excluir/@permissao.Id" class="btn btn-danger"> Excluir </a>
+                        </td>
+                    </tr>
+                    }
+            </tbody>
+        </table>
+    </div>
+</div>
+
