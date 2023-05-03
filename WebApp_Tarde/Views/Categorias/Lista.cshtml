@@ -1,0 +1,6 @@
+﻿@model List<WebApp_Tarde.Entidades.CategoriaEntidade>
+
+@foreach (var categorias in Model)
+{
+    <p> @categorias.Id - @categorias.Nome - @categorias.Ativo </p>
+}
