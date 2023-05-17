@@ -1,9 +1,6 @@
 ﻿@model List<WebApp_Tarde.Entidades.ProdutoEntidade>
 
-    @foreach (var produto in Model)
-{
-    <p>@produto.Descricao - R$ @produto.Valor</p>
-}
+ 
 
 <div class="card">
 
@@ -14,7 +11,7 @@
 
         <div class="row">
             <div class="col-2">
-                <a href="/Produtos/ListaP" class="btn btn-success">
+                <a href="/Produtos/CadastroP" class="btn btn-success">
                     Novo Produto
                 </a>
             </div>
@@ -42,57 +39,26 @@
             <thead>
                 <tr>
                     <th>Código</th>
-                    <th>Nome Produto</th>
+                    <th>Descricao</th>
                     <th>Valor</th>
-                    <th>Quantidade</th>
+                    <th>Categoria</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Chinelo</td>
-                    <td>R$13,99</td>
-                    <td>13</td>
-                    <td>
-                        <a href="/Produtos/editar/1" class="btn btn-warning"> Editar </a>
-                        <a href="/Produtos/excluir/1" class="btn btn-danger"> Excluir </a>
-                        <a href="/Produtos/compras/1" class="btn btn-info"> Lista de produtos </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Boné</td>
-                    <td>R$9,99</td>
-                    <td>3</td>
-                    <td>
-                        <a href="/Produtos/editar/2" class="btn btn-warning"> Editar </a>
-                        <a href="/Produtos/excluir/2" class="btn btn-danger"> Excluir </a>
-                        <a href="/Produtos/compras/2" class="btn btn-info"> Lista de produtos </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Calça</td>
-                    <td>R$30,00</td>
-                    <td>4</td>
-                    <td>
-                        <a href="/Produtos/editar/3" class="btn btn-warning"> Editar </a>
-                        <a href="/Produtos/excluir/3" class="btn btn-danger"> Excluir </a>
-                        <a href="/Produtos/compras/3" class="btn btn-info"> Lista de produtos </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Camiseta</td>
-                    <td>R$25,00</td>
-                    <td>5</td>
-                    <td>
-                        <a href="/Produtos/editar/4" class="btn btn-warning"> Editar </a>
-                        <a href="/Produtos/excluir/4" class="btn btn-danger"> Excluir </a>
-                        <a href="/Produtos/compras/4" class="btn btn-info"> Lista de produtos </a>
-                    </td>
-                </tr>
+                @foreach (var produto in Model)
+                {
+                    <tr>
+                        <td>@produto.Id</td>
+                        <td>@produto.Descricao</td>
+                        <td>R$ @produto.Valor</td>
+                        <td>@produto.Categoria.Nome</td>
+                        <td>
+                            <a href="/Produtos/editar/@produto.Id" class="btn btn-warning">Editar</a>
+                            <a href="/Produtos/excluir/@produto.Id" class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                }
             </tbody>
 
         </table>

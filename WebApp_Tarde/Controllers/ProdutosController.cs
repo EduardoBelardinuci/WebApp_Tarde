@@ -1,4 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Transactions;
+using WebApp_Tarde.Entidades;
+using WebApp_Tarde.Models;
 
 namespace WebApp_Tarde.Controllers
 {
@@ -13,11 +17,20 @@ namespace WebApp_Tarde.Controllers
 
         public IActionResult ListaP()
         {
-            return View(db.Produtos.ToList() );
+            return View(db.Produtos.Include(a => a.Categoria).ToList() );
         }
         public IActionResult CadastroP()
         {
-            return View();
+            NovoProdutoViewModel model = new NovoProdutoViewModel();
+            model.Lista_Categorias = db.CATEGORIAS.ToList();
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult SalvarDados(ProdutoEntidade produto)
+        {
+            db.Produtos.Add(produto);
+            db.SaveChanges();
+            return RedirectToAction("ListaP");
         }
     }
 }
